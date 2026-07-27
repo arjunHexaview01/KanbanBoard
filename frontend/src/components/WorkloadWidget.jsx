@@ -61,8 +61,8 @@ export default function WorkloadWidget() {
   return (
     <div className="workload-widget">
       <div className="widget-header">
-        <BarChart3 size={18} style={{ color: 'var(--color-primary)' }} />
-        <h3 className="widget-title">Team Workload</h3>
+        <BarChart3 size={16} style={{ color: 'var(--color-primary)' }} />
+        <h3 className="widget-title">Workload Summary</h3>
       </div>
 
       <div className="workload-list">
@@ -74,11 +74,6 @@ export default function WorkloadWidget() {
         ) : (
           processedData.map((item) => {
             const { user, Todo, 'In Progress': inProgress, Done, total } = item;
-            
-            const todoPct = total > 0 ? (Todo / total) * 100 : 0;
-            const progressPct = total > 0 ? (inProgress / total) * 100 : 0;
-            const donePct = total > 0 ? (Done / total) * 100 : 0;
-
             const initials = user.name
               .split(' ')
               .map((n) => n[0])
@@ -87,67 +82,21 @@ export default function WorkloadWidget() {
               .slice(0, 2);
 
             return (
-              <div className="workload-item" key={user.id ?? 'unassigned'}>
-                <div className="workload-item-header">
+              <div className="workload-item" key={user.id ?? 'unassigned'} style={{ paddingBottom: '0.5rem', borderBottom: '1px solid #f4f5f7' }}>
+                <div className="workload-item-header" style={{ marginBottom: '0.15rem' }}>
                   <div className="workload-user-details">
-                    <div className="assignee-avatar-mini" style={{ width: '1.75rem', height: '1.75rem', fontSize: '0.7rem' }}>
+                    <div className="assignee-avatar-mini" style={{ width: '1.5rem', height: '1.5rem', fontSize: '0.65rem' }}>
                       {initials || '?'}
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      <span className="workload-user-name">{user.name}</span>
-                      <span className="workload-user-role">{user.role}</span>
+                      <span className="workload-user-name" style={{ fontSize: '0.825rem' }}>{user.name}</span>
+                      <span className="workload-user-role" style={{ fontSize: '0.65rem' }}>{user.role}</span>
                     </div>
                   </div>
-                  <span className="workload-total-tasks">
-                    {total} {total === 1 ? 'task' : 'tasks'}
-                  </span>
                 </div>
-
-                {total > 0 ? (
-                  <>
-                    <div className="workload-bar-split">
-                      {Todo > 0 && (
-                        <div
-                          className="workload-bar-chunk workload-bar-todo"
-                          style={{ width: `${todoPct}%` }}
-                          title={`Todo: ${Todo}`}
-                        />
-                      )}
-                      {inProgress > 0 && (
-                        <div
-                          className="workload-bar-chunk workload-bar-progress"
-                          style={{ width: `${progressPct}%` }}
-                          title={`In Progress: ${inProgress}`}
-                        />
-                      )}
-                      {Done > 0 && (
-                        <div
-                          className="workload-bar-chunk workload-bar-done"
-                          style={{ width: `${donePct}%` }}
-                          title={`Done: ${Done}`}
-                        />
-                      )}
-                    </div>
-                    <div className="workload-legend">
-                      <span className="legend-item" title={`Todo: ${Todo}`}>
-                        <span className="legend-dot workload-bar-todo" />
-                        <span>Todo: {Todo}</span>
-                      </span>
-                      <span className="legend-item" title={`In Progress: ${inProgress}`}>
-                        <span className="legend-dot workload-bar-progress" />
-                        <span>In Progress: {inProgress}</span>
-                      </span>
-                      <span className="legend-item" title={`Done: ${Done}`}>
-                        <span className="legend-dot workload-bar-done" />
-                        <span>Done: {Done}</span>
-                      </span>
-                    </div>
-                  </>
-                ) : (
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontStyle: 'italic', paddingLeft: '2.25rem' }}>
-                    No assigned tasks
-                  </div>
-                )}
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', paddingLeft: '2rem' }}>
+                  Tasks: <strong>{total}</strong> (Todo: {Todo} | In Progress: {inProgress} | Done: {Done})
+                </div>
               </div>
             );
           })
