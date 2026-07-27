@@ -2,11 +2,6 @@
 
 Horizon Tracker is a full-stack, Kanban-style task management POC built with a **Node.js/Express + Sequelize (MySQL)** backend and a **React + Zustand** frontend. It features a responsive, light-theme interface designed for tracking tasks, assigning roles, and visualizing team workloads through database-level aggregates.
 
-## 📖 Architecture Documentation
-For a deep-dive into the architectural structures and database designs, please review:
-* 💻 [Backend Architecture & Data Flow](docs/backend_architecture.md)
-* 🎨 [Frontend State & Component topology](docs/frontend_architecture.md)
-
 ---
 
 ## Technical Stack & Architectural Decisions
