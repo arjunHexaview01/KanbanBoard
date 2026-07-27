@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Natural Light Theme Palette */
+  --bg-main: #f4f5f7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfdfe;
+  --bg-column: #e9ebf0;
+  
+  --border-color: #dfe1e6;
+  --border-color-hover: #c1c7d0;
+  
+  --text-primary: #172b4d;
+  --text-secondary: #42526e;
+  --text-muted: #6b778c;
+  
+  --color-primary: #0052cc; /* Classic Atlassian Blue */
+  --color-primary-hover: #0047b3;
+  --color-accent: #6554c0; /* Soft Purple */
+  --color-success: #36b37e; /* Green */
+  --color-warning: #ffab00; /* Amber */
+  --color-danger: #ff5630; /* Orange-Red */
+  
+  /* Priority Colors */
+  --priority-low: #36b37e;
+  --priority-medium: #ff9900;
+  --priority-high: #ff5630;
+  
+  /* Soft Trello-style shadows */
+  --shadow-sm: 0 1px 1px rgba(9, 30, 66, 0.25), 0 0 1px rgba(9, 30, 66, 0.31);
+  --shadow-md: 0 3px 5px rgba(9, 30, 66, 0.2), 0 0 1px rgba(9, 30, 66, 0.3);
+  --shadow-lg: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 1px rgba(9, 30, 66, 0.31);
+  
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 0.1s ease;
+  --transition-normal: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ebecf0;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c7d0;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5adba;
+}
