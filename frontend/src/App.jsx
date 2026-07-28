@@ -72,7 +72,7 @@ export default function App() {
       <header className="app-header">
         <div className="brand-section">
           <LayoutGrid size={24} style={{ color: 'var(--color-primary)' }} />
-          <h1 className="brand-title">Horizon Tracker</h1>
+          <h1 className="brand-title">Kanban Board</h1>
         </div>
 
         <div className="user-profile-section">

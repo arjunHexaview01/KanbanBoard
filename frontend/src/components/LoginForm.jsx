@@ -50,7 +50,7 @@ export default function LoginForm() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <h2 className="auth-title">Horizon Board</h2>
+          <h2 className="auth-title">Kanban Board</h2>
           <p className="auth-subtitle">
             {isRegister ? 'Create your team member account' : 'Sign in to access your dashboard'}
           </p>

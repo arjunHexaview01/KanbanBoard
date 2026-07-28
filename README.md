@@ -1,6 +1,6 @@
-# Horizon Tracker — Task & Team Workload Tracker (POC)
+# Kanban Board — Task & Team Workload Tracker (POC)
 
-Horizon Tracker is a full-stack, Kanban-style task management POC built with a **Node.js/Express + Sequelize (MySQL)** backend and a **React + Zustand** frontend. It features a responsive, light-theme interface designed for tracking tasks, assigning roles, and visualizing team workloads through database-level aggregates.
+Kanban Board is a full-stack, Kanban-style task management POC built with a **Node.js/Express + Sequelize (MySQL)** backend and a **React + Zustand** frontend. It features a responsive, light-theme interface designed for tracking tasks, assigning roles, and visualizing team workloads through database-level aggregates.
 
 ---
 
